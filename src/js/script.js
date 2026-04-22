@@ -1,5 +1,5 @@
 
-mapboxgl.accessToken = ' ACCESS TOKEN ';
+mapboxgl.accessToken = 'pk.eyJ1IjoidWEyIiwiYSI6ImNtbnl3djZ2azA2bHMycm9nb3MycmZpN3UifQ._jWrIGrPo-6izrQe9cfgrw';
 
 
 var mapProps = {
@@ -10,8 +10,12 @@ var mapProps = {
 
 var map = new mapboxgl.Map(mapProps);
 
-map.on(" event ", function(evt){
+let count = 0;
+let info = document.querySelector("#info");
 
-	
-	
+map.on("click", function(evt){
+	count++;
+	console.log(count);
+	info.value = `Clicks: ${count}`;
+	console.log(info);
 });
